@@ -1,0 +1,57 @@
+<!-- INCLUDE overall_header.html -->
+
+<a id="maincontent"></a>
+
+<h1>{L_ACP_VC_SETTINGS}</h1>
+
+<p>{L_ACP_VC_SETTINGS_EXPLAIN}</p>
+
+
+<form id="acp_captcha" method="post" action="{U_ACTION}">
+
+<fieldset>
+<legend>{L_GENERAL_OPTIONS}</legend>
+
+<dl>
+	<dt><label for="recaptchav2_sitekey">{L_RECAPTCHAV2_SITEKEY}{L_COLON}</label><br /><span>{L_RECAPTCHAV2_SITEKEY_EXPLAIN}</span></dt>
+	<dd><input id="recaptchav2_sitekey" name="recaptchav2_sitekey" value="{RECAPTCHAV2_SITEKEY}" size="50" type="text" /></dd>
+</dl>
+<dl>
+	<dt><label for="recaptchav2_seckey">{L_RECAPTCHAV2_SECKEY}{L_COLON}</label><br /><span>{L_RECAPTCHAV2_SECKEY_EXPLAIN}</span></dt>
+	<dd><input id="recaptchav2_seckey" name="recaptchav2_seckey" value="{RECAPTCHAV2_SECKEY}" size="50" type="text" /></dd>
+</dl>
+<dl>
+	<dt><label for="recaptchav2_theme">{L_RECAPTCHAV2_THEME}{L_COLON}</label></dt>
+	<dd><select id="recaptchav2_theme" name="recaptchav2_theme" value="{RECAPTCHAV2_THEME}">
+		<option value="light"<!-- IF RECAPTCHAV2_THEME == 'light' --> selected="selected"<!-- ENDIF -->>{L_RECAPTCHAV2_THEME_LIGHT}</option>
+		<option value="dark"<!-- IF RECAPTCHAV2_THEME == 'dark' --> selected="selected"<!-- ENDIF -->>{L_RECAPTCHAV2_THEME_DARK}</option>
+	</select></dd>
+</dl>
+
+
+</fieldset>
+<fieldset>
+	<legend>{L_PREVIEW}</legend>
+	<!-- IF PREVIEW -->
+	<div class="successbox">
+		<h3>{L_WARNING}</h3>
+		<p>{L_CAPTCHA_PREVIEW_MSG}</p>
+	</div>
+	<!-- ENDIF -->
+	<!-- INCLUDE {CAPTCHA_PREVIEW} -->
+</fieldset>
+
+<fieldset>
+	<legend>{L_ACP_SUBMIT_CHANGES}</legend>
+	<p class="submit-buttons">
+		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+		<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />&nbsp;
+	</p>
+	<input type="hidden" name="select_captcha" value="{CAPTCHA_NAME}" />
+	<input type="hidden" name="configure" value="1" />
+
+	{S_FORM_TOKEN}
+</fieldset>
+</form>
+
+<!-- INCLUDE overall_footer.html -->

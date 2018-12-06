@@ -1,0 +1,20 @@
+	<!-- IF S_RECAPTCHAV2_AVAILABLE -->
+	<dl>
+		<dd>
+			<script type="text/javascript">
+			// <![CDATA[
+				var onloadCallbackReCaptchav2 = function() {
+					grecaptcha.render('recaptchav2_container', {
+						theme: '{RECAPTCHAV2_THEME}',
+						sitekey: '{RECAPTCHAV2_SITEKEY}'
+					});
+				};
+			// ]]>
+			</script>
+			<div id="recaptchav2_container"></div>
+			<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallbackReCaptchav2&render=explicit" async defer></script>
+		</dd>
+	</dl>
+	<!-- ELSE -->
+	{L_RECAPTCHA_NOT_AVAILABLE}
+	<!-- ENDIF -->

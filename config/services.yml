@@ -1,0 +1,15 @@
+services:
+    numeric.recaptchav2.recaptchav2:
+        class: numeric\recaptchav2\recaptchav2
+        calls:
+            - [set_name, [numeric.recaptchav2.recaptchav2]]
+        arguments:
+            - @dbal.conn
+            - @cache.driver
+            - @config
+            - @log
+            - @request
+            - @template
+            - @user
+        tags:
+            - { name: captcha.plugins }

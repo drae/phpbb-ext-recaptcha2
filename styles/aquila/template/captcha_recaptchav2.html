@@ -1,0 +1,24 @@
+							<!-- IF S_TYPE == 1 -->
+							<h3>{L_CONFIRMATION}</h3>
+							
+							<p>{L_CONFIRM_EXPLAIN}</p>
+							<!-- ENDIF -->
+	
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="recaptchav2_container">*{L_CONFIRM_CODE}{L_COLON}</label>
+								<div class="col-sm-9 form-inline">
+									
+									<script type="text/javascript">
+									// <![CDATA[
+										var onloadCallbackReCaptchav2 = function() {
+											grecaptcha.render('recaptchav2_container', {
+												theme: '{RECAPTCHAV2_THEME}',
+												sitekey: '{RECAPTCHAV2_SITEKEY}'
+											});
+										};
+									// ]]>
+									</script>
+									<div id="recaptchav2_container"></div>
+									<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallbackReCaptchav2&render=explicit" async defer></script>
+								</div>
+							</div>
